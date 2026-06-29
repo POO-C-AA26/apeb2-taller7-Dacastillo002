@@ -91,6 +91,8 @@ public class Problema_02_EjecutorVideoClub {
 /**
  * run:
  * 
-   BUILD SUCCESSFUL (total time: 0 seconds)
+  Vhs{idioma=ES}Soporte{pelicula=Pelicula{titulo=Interestellar, autor=Andre, anio=2002}, cantidad=2, precio=10.5, costoAlquiler=21.0}
+  Dvd{idiomas=[ES, ENG], porcentajeRecargo=10.0}Soporte{pelicula=Pelicula{titulo=Toy Story, autor=Daniel, anio=2002}, cantidad=4, precio=7.8, costoAlquiler=34.32}
+BUILD SUCCESSFUL (total time: 0 seconds)
 
  */
