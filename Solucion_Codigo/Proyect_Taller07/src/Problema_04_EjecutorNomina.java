@@ -9,10 +9,10 @@ import java.util.ArrayList;
  * @version 1.0
  */
 class Trabajador {
-    public String nombre;
-    public String apellidos;
-    public String direccion;
-    public String dni;
+    private String nombre;
+    private String apellidos;
+    private String direccion;
+    private String dni;
 
     public Trabajador(String nombre, String apellidos, String direccion, String dni) {
         this.nombre = nombre;
@@ -20,6 +20,8 @@ class Trabajador {
         this.direccion = direccion;
         this.dni = dni;
     }
+
+    public String getNombre() { return nombre; }
 
     public double calcularNomina() {
         return 0;
@@ -32,7 +34,7 @@ class Trabajador {
 }
 
 class Jefe extends Trabajador {
-    public double sueldoFijo;
+    private double sueldoFijo;
 
     public Jefe(String nombre, String apellidos, String direccion, String dni, double sueldoFijo) {
         super(nombre, apellidos, direccion, dni);
@@ -51,8 +53,8 @@ class Jefe extends Trabajador {
 }
 
 class FijoMensual extends Trabajador {
-    public double sueldoMensual;
-    public Jefe jefe;
+    private double sueldoMensual;
+    private Jefe jefe;
 
     public FijoMensual(String nombre, String apellidos, String direccion, String dni, double sueldoMensual, Jefe jefe) {
         super(nombre, apellidos, direccion, dni);
@@ -67,14 +69,14 @@ class FijoMensual extends Trabajador {
 
     @Override
     public String toString() {
-        return "FijoMensual{" + "sueldoMensual=" + sueldoMensual + ", jefe=" + jefe.nombre + '}' + super.toString();
+        return "FijoMensual{" + "sueldoMensual=" + sueldoMensual + ", jefe=" + jefe.getNombre() + '}' + super.toString();
     }
 }
 
 class Comisionista extends Trabajador {
-    public double porcentajeComision;
-    public double totalVentas;
-    public Jefe jefe;
+    private double porcentajeComision;
+    private double totalVentas;
+    private Jefe jefe;
 
     public Comisionista(String nombre, String apellidos, String direccion, String dni, double porcentajeComision, double totalVentas, Jefe jefe) {
         super(nombre, apellidos, direccion, dni);
@@ -90,15 +92,15 @@ class Comisionista extends Trabajador {
 
     @Override
     public String toString() {
-        return "Comisionista{" + "porcentajeComision=" + porcentajeComision + ", totalVentas=" + totalVentas + ", jefe=" + jefe.nombre + '}' + super.toString();
+        return "Comisionista{" + "porcentajeComision=" + porcentajeComision + ", totalVentas=" + totalVentas + ", jefe=" + jefe.getNombre() + '}' + super.toString();
     }
 }
 
 class PorHoras extends Trabajador {
-    public double horasTrabajadas;
-    public double precioPorHora;
-    public double precioHoraExtra;
-    public Jefe jefe;
+    private double horasTrabajadas;
+    private double precioPorHora;
+    private double precioHoraExtra;
+    private Jefe jefe;
 
     public PorHoras(String nombre, String apellidos, String direccion, String dni, double horasTrabajadas, double precioPorHora, double precioHoraExtra, Jefe jefe) {
         super(nombre, apellidos, direccion, dni);
@@ -119,7 +121,7 @@ class PorHoras extends Trabajador {
 
     @Override
     public String toString() {
-        return "PorHoras{" + "horasTrabajadas=" + horasTrabajadas + ", precioPorHora=" + precioPorHora + ", precioHoraExtra=" + precioHoraExtra + ", jefe=" + jefe.nombre + '}' + super.toString();
+        return "PorHoras{" + "horasTrabajadas=" + horasTrabajadas + ", precioPorHora=" + precioPorHora + ", precioHoraExtra=" + precioHoraExtra + ", jefe=" + jefe.getNombre() + '}' + super.toString();
     }
 }
 
@@ -143,7 +145,6 @@ public class Problema_04_EjecutorNomina {
         }
     }
 }
-
 /**
  * run:
 Jefe{sueldoFijo=3000.0}Trabajador{nombre=Carlos, apellidos=Perez, direccion=Av. Principal 123, dni=1234567890, nomina=3000.0}
